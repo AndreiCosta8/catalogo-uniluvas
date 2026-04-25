@@ -406,11 +406,56 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
 }
 
 @media print{
+  /* Esconde tudo da página exceto o modal aberto */
   body>*:not(.modal-bg){display:none!important}
-  .modal-bg{position:static!important;background:none!important;padding:0!important;display:block!important}
-  .modal{box-shadow:none!important;border-radius:0!important;max-width:100%!important}
+
+  /* Força navegadores a imprimir backgrounds e cores (por padrão eles removem) */
+  *{
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+
+  /* Container do modal: remove posicionamento fixo, scroll e padding */
+  .modal-bg{
+    position:static!important;
+    background:none!important;
+    backdrop-filter:none!important;
+    padding:0!important;
+    display:block!important;
+    overflow:visible!important;
+  }
+
+  /* Conteúdo do modal: deixa crescer naturalmente, sem altura limitada */
+  .modal{
+    box-shadow:none!important;
+    border-radius:0!important;
+    max-width:100%!important;
+    max-height:none!important;
+    overflow:visible!important;
+    animation:none!important;
+  }
+
+  /* Hero da foto: deixa imagem crescer sem o clip de 260px */
+  .mhero{
+    height:auto!important;
+    min-height:200px!important;
+    page-break-inside:avoid;
+  }
+  .mimg{max-height:180px!important}
+
+  /* Esconde elementos de UI que não fazem sentido no PDF */
   .mclose,.mcta,.mcta-row2,#scroll-top,.nav,.filter-bar{display:none!important}
-  @page{margin:1cm}
+
+  /* Evita que blocos de informação críticos sejam cortados entre páginas */
+  .minfo,.mval-box,.mprot,.mnorm,.mapp,.mgrid2,.mval-grid{
+    page-break-inside:avoid;
+  }
+
+  /* Títulos de seção ficam grudados no conteúdo seguinte */
+  .msec{page-break-after:avoid}
+
+  /* Margens da folha A4 */
+  @page{margin:1.5cm}
 }
 .cta-pdf,.cta-send{display:flex;align-items:center;gap:8px;justify-content:center;font-weight:700;font-size:13px;padding:13px 16px;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .15s;flex:1;border:none}
 .cta-pdf{background:#fff;border:1.5px solid var(--border)!important;color:var(--navy)}
@@ -1475,8 +1520,19 @@ window.addEventListener('scroll',showVisibleReveals,{passive:true});
 setTimeout(()=>document.querySelectorAll('.reveal:not(.vis)').forEach(el=>el.classList.add('vis')),600);
 
 function gerarPDF(){
+  // Pega o nome do produto que está aberto no modal para nomear o PDF
+  var box = document.getElementById('modal-box');
+  var nameEl = box ? box.querySelector('.mname') : null;
+  var prodName = nameEl ? nameEl.textContent.trim() : 'Produto';
+  var origTitle = document.title;
+  // Define título temporário (vira nome do arquivo PDF salvo)
+  document.title = 'Ficha ' + prodName + ' - Uniluvas';
   document.getElementById('modal-bg').classList.add('open');
-  setTimeout(function(){window.print();},250);
+  setTimeout(function(){
+    window.print();
+    // Restaura título original depois da impressão
+    setTimeout(function(){ document.title = origTitle; }, 500);
+  },250);
 }
 
 function enviarFicha(prodId){
