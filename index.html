@@ -5,11 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Uniluvas · Guia de Proteção das Mãos 2026</title>
 <meta name="description" content="Catálogo oficial de EPIs Uniluvas — 17 produtos certificados CA/MTE para proteção das mãos. DuPont Kevlar e Nomex."/>
+<meta name="keywords" content="EPI, luvas Kevlar, luvas anti-corte, proteção das mãos, Uniluvas, mineração, Vale, certificado CA"/>
+<meta name="author" content="Uniluvas Parauapebas"/>
+<link rel="canonical" href="https://andreicosta8.github.io/catalogo-uniluvas/"/>
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
 <meta property="og:type" content="website"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:site_name" content="Uniluvas"/>
+<meta property="og:url" content="https://andreicosta8.github.io/catalogo-uniluvas/"/>
 <meta property="og:title" content="Uniluvas · Guia de Proteção das Mãos 2026"/>
-<meta property="og:description" content="17 EPIs certificados CA/MTE em 5 categorias de risco. Tecnologia DuPont™ Kevlar® e Nomex® — fornecedora Vale Brasil."/>
+<meta property="og:description" content="🧤 17 EPIs certificados CA/MTE em 5 categorias de risco · DuPont™ Kevlar® e Nomex® · Fornecedora homologada Vale S.A."/>
 <meta property="og:image" content="https://www.uniluvas.com.br/wp-content/uploads/elementor/thumbs/uniluvas_logo_branco-pz44znqn49yzkes0ua7t82k4b2bf45tf5zqd88mu8e.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Uniluvas - Catálogo de EPIs"/>
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Uniluvas · Guia de Proteção das Mãos 2026"/>
+<meta name="twitter:description" content="🧤 17 EPIs certificados CA/MTE · DuPont™ Kevlar® e Nomex® · Fornecedora Vale S.A."/>
+<meta name="twitter:image" content="https://www.uniluvas.com.br/wp-content/uploads/elementor/thumbs/uniluvas_logo_branco-pz44znqn49yzkes0ua7t82k4b2bf45tf5zqd88mu8e.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@500&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -188,13 +202,15 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);overflow
 .cat-header-icon{font-size:22px}
 .cat-header-title{font-size:15px;font-weight:700;color:var(--navy)}
 .cat-header-count{font-size:11px;color:var(--muted);background:var(--off);border:1px solid var(--border);border-radius:8px;padding:2px 8px}
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:980px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.prod-grid{grid-template-columns:1fr}}
 
 /* PRODUCT CARD */
 
 /* Bestseller badge */
 .bestseller-badge{
-  position:absolute;top:14px;left:14px;
+  position:absolute;top:48px;left:14px;
   background:linear-gradient(135deg,#f59e0b,#d97706);
   color:#fff;font-size:9px;font-weight:700;
   padding:4px 10px;border-radius:8px;
@@ -261,6 +277,11 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);overflow
 .mcta{padding:18px 28px 26px;border-top:1.5px solid var(--border);display:flex;gap:10px;flex-wrap:wrap}
 .cta-wa{flex:1;min-width:160px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-weight:700;font-size:13px;padding:13px 20px;border-radius:12px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .15s}
 .cta-wa:hover{opacity:.92;transform:translateY(-1px)}
+.cta-share{flex:1;min-width:160px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:700;font-size:13px;padding:13px 20px;border-radius:12px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .2s;box-shadow:0 4px 14px rgba(59,130,246,.25);position:relative;overflow:hidden}
+.cta-share:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.4)}
+.cta-share:active{transform:translateY(0)}
+.cta-share::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,.18),transparent);transform:rotate(45deg) translateX(-100%);transition:transform .6s}
+.cta-share:hover::after{transform:rotate(45deg) translateX(100%)}
 .cta-carlos{
   display:flex;align-items:center;gap:8px;justify-content:center;
   background:var(--navy);color:var(--gold2);
@@ -363,7 +384,7 @@ body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);overflow
   .mbody{padding:20px 16px 8px}
   .mgrid2,.mval-grid{grid-template-columns:1fr}
   .mcta{padding:14px 16px 22px;flex-direction:column}
-  .cta-wa,.cta-carlos{width:100%;justify-content:center;text-align:center}
+  .cta-wa,.cta-carlos,.cta-share{width:100%;justify-content:center;text-align:center}
 
   /* NORMAS e WHY */
   .norms-grid{grid-template-columns:1fr}
@@ -457,11 +478,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
   /* Margens da folha A4 */
   @page{margin:1.5cm}
 }
-.cta-pdf,.cta-send{display:flex;align-items:center;gap:8px;justify-content:center;font-weight:700;font-size:13px;padding:13px 16px;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .15s;flex:1;border:none}
+.cta-pdf{display:flex;align-items:center;gap:8px;justify-content:center;font-weight:700;font-size:13px;padding:13px 16px;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all .15s;flex:1;border:none}
 .cta-pdf{background:#fff;border:1.5px solid var(--border)!important;color:var(--navy)}
 .cta-pdf:hover{background:var(--off)}
-.cta-send{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff}
-.cta-send:hover{opacity:.9}
 .mcta-row2{display:flex;gap:10px;width:100%;margin-top:8px;flex-wrap:wrap}
 @media(max-width:480px){.mcta-row2{flex-direction:column}}
 
@@ -577,6 +596,297 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
   50%{transform:scale(1.18);color:#fff}
 }
 .hs-val.popping{animation:numPop .35s ease}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMAÇÕES TEMÁTICAS — Single-shot 3s ao entrar na tela
+   Filosofia: efeito "olá!" curto e marcante. Roda 1 vez por carga.
+   Quem quer ver de novo: refresh ou rolar e voltar.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Container coberto pelo card todo, fica ATRÁS do conteúdo */
+.fx-layer{
+  position:absolute;inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  border-radius:var(--r);
+  z-index:0;
+  opacity:0;
+}
+
+/* Conteúdo (imagem, texto, badges) sempre acima */
+.prod-img-wrap, .prod-body{position:relative;z-index:2}
+.bestseller-badge, .cat-chip{z-index:3}
+
+/* ─── 🔥 FOGO (cards data-cat="solda") ──────────────────────── */
+.prod-card[data-cat="solda"].anim-once .fx-fire{
+  animation:fxAppear 3s ease-out forwards;
+}
+@keyframes fxAppear{
+  0%   {opacity:0}
+  10%  {opacity:1}
+  85%  {opacity:1}
+  100% {opacity:0}
+}
+
+/* Chamas: 5 pequenas, contidas no card, animação única de 3s */
+.fx-fire .flame{
+  position:absolute;
+  border-radius:50% 50% 30% 30%;
+  background:radial-gradient(ellipse at 50% 80%,
+    rgba(255,255,200,1) 0%,
+    rgba(255,193,7,.95) 25%,
+    rgba(255,87,34,.85) 55%,
+    rgba(244,67,54,.6) 80%,
+    transparent 100%);
+  filter:blur(2px);
+  mix-blend-mode:screen;
+  opacity:0;
+}
+.prod-card[data-cat="solda"].anim-once .fx-fire .flame{
+  animation:flameRise 3s ease-out forwards;
+}
+.fx-fire .flame:nth-child(1){left:8%; bottom:0; width:40px; height:90px;  animation-delay:0.0s}
+.fx-fire .flame:nth-child(2){left:25%;bottom:0; width:55px; height:120px; animation-delay:0.2s}
+.fx-fire .flame:nth-child(3){left:45%;bottom:0; width:48px; height:105px; animation-delay:0.4s}
+.fx-fire .flame:nth-child(4){left:65%;bottom:0; width:58px; height:125px; animation-delay:0.3s}
+.fx-fire .flame:nth-child(5){left:85%;bottom:0; width:42px; height:95px;  animation-delay:0.5s}
+
+@keyframes flameRise{
+  0%   {opacity:0; transform:translateY(20px) scaleY(.6)}
+  20%  {opacity:.9}
+  50%  {transform:translateY(-10px) scaleY(1) skewX(-5deg)}
+  70%  {transform:translateY(-25px) scaleY(1.05) skewX(5deg); opacity:.7}
+  100% {opacity:0; transform:translateY(-50px) scaleY(.7)}
+}
+
+/* Brasas voando rapidinho */
+.fx-fire .ember{
+  position:absolute;
+  width:4px;height:4px;border-radius:50%;
+  background:#ffeb3b;
+  box-shadow:0 0 8px #ff9800,0 0 16px #ff5722;
+  opacity:0;
+}
+.prod-card[data-cat="solda"].anim-once .fx-fire .ember{
+  animation:emberFly 3s ease-out forwards;
+}
+.fx-fire .ember:nth-child(6){left:20%; bottom:5%;  animation-delay:0.6s}
+.fx-fire .ember:nth-child(7){left:50%; bottom:10%; animation-delay:0.9s}
+.fx-fire .ember:nth-child(8){left:75%; bottom:5%;  animation-delay:0.7s}
+
+@keyframes emberFly{
+  0%   {opacity:0; transform:translate(0,0)}
+  20%  {opacity:1}
+  100% {opacity:0; transform:translate(15px, -80px)}
+}
+
+/* ─── ⚡ RAIOS (cards data-cat="eletrico") ──────────────────── */
+.prod-card[data-cat="eletrico"].anim-once .fx-bolt{
+  animation:fxAppear 3s ease-out forwards;
+}
+
+.fx-bolt svg{
+  position:absolute;
+  filter:drop-shadow(0 0 10px #fde047) drop-shadow(0 0 20px #facc15) brightness(1.4);
+  opacity:0;
+}
+.prod-card[data-cat="eletrico"].anim-once .fx-bolt svg{
+  animation:zapOnce 3s ease-out forwards;
+}
+.fx-bolt svg.b1{top:8%;  left:12%; width:50px;height:110px; animation-delay:0.1s}
+.fx-bolt svg.b2{top:12%; right:18%;width:48px;height:100px; transform:scaleX(-1); animation-delay:0.4s}
+.fx-bolt svg.b3{bottom:25%;left:32%;width:42px;height:90px; animation-delay:0.8s}
+.fx-bolt svg.b4{bottom:20%;right:28%;width:46px;height:95px; transform:scaleX(-1); animation-delay:1.2s}
+
+@keyframes zapOnce{
+  0%   {opacity:0}
+  5%   {opacity:1; filter:drop-shadow(0 0 15px #fff) drop-shadow(0 0 25px #fde047) brightness(1.7)}
+  15%  {opacity:.3}
+  25%  {opacity:1; filter:drop-shadow(0 0 12px #fde047) brightness(1.4)}
+  40%  {opacity:0}
+  100% {opacity:0}
+}
+
+/* Brilho elétrico de fundo (1 pulso) */
+.prod-card[data-cat="eletrico"].anim-once .fx-bolt::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,
+    rgba(253,224,71,.4) 0%,
+    rgba(250,204,21,.15) 35%,
+    transparent 65%);
+  opacity:0;
+  animation:electricGlow 3s ease-out forwards;
+}
+@keyframes electricGlow{
+  0%, 100% {opacity:0}
+  10%      {opacity:.8}
+  25%      {opacity:.3}
+  40%      {opacity:.6}
+  60%      {opacity:0}
+}
+
+/* ─── ✂️ CORTE (cards data-cat="corte") ──────────────────── */
+.prod-card[data-cat="corte"].anim-once .fx-slash{
+  animation:fxAppear 3s ease-out forwards;
+}
+
+.fx-slash .blade{
+  position:absolute;
+  background:linear-gradient(135deg,
+    transparent 0%,
+    rgba(255,255,255,.1) 30%,
+    rgba(220,220,235,.95) 50%,
+    rgba(255,255,255,.1) 70%,
+    transparent 100%);
+  filter:blur(1px) drop-shadow(0 0 8px rgba(200,210,230,.6));
+  opacity:0;
+  transform-origin:left center;
+}
+.prod-card[data-cat="corte"].anim-once .fx-slash .blade{
+  animation:slashCut 3s ease-out forwards;
+}
+.fx-slash .blade:nth-child(1){top:15%;  left:-10%; width:140%; height:3px; transform:rotate(-25deg); animation-delay:0.2s}
+.fx-slash .blade:nth-child(2){top:45%;  left:-10%; width:140%; height:4px; transform:rotate(-22deg); animation-delay:0.6s}
+.fx-slash .blade:nth-child(3){top:70%;  left:-10%; width:140%; height:3px; transform:rotate(-28deg); animation-delay:1.0s}
+
+@keyframes slashCut{
+  0%   {opacity:0; transform-origin:left center; clip-path:inset(0 100% 0 0)}
+  10%  {opacity:1}
+  40%  {opacity:1; clip-path:inset(0 0 0 0)}
+  70%  {opacity:.6}
+  100% {opacity:0; clip-path:inset(0 0 0 0)}
+}
+
+/* Brilho metálico de fundo */
+.prod-card[data-cat="corte"].anim-once .fx-slash::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,
+    transparent 30%,
+    rgba(180,200,220,.15) 45%,
+    rgba(220,230,240,.3) 50%,
+    rgba(180,200,220,.15) 55%,
+    transparent 70%);
+  opacity:0;
+  animation:metalShine 3s ease-out forwards;
+}
+@keyframes metalShine{
+  0%, 100% {opacity:0; transform:translateX(-100%)}
+  30%      {opacity:.7; transform:translateX(0%)}
+  60%      {opacity:.4; transform:translateX(50%)}
+  80%      {opacity:0; transform:translateX(100%)}
+}
+
+/* ─── 🛡️ MECÂNICA (cards data-cat="mecanica") ──────────────── */
+.prod-card[data-cat="mecanica"].anim-once .fx-shield{
+  animation:fxAppear 3s ease-out forwards;
+}
+
+.fx-shield .ring{
+  position:absolute;
+  top:50%; left:50%;
+  border-radius:50%;
+  border:3px solid rgba(34,197,94,.7);
+  box-shadow:0 0 20px rgba(34,197,94,.5),inset 0 0 15px rgba(34,197,94,.3);
+  opacity:0;
+  transform:translate(-50%,-50%) scale(0);
+}
+.prod-card[data-cat="mecanica"].anim-once .fx-shield .ring{
+  animation:shieldPulse 3s ease-out forwards;
+}
+.fx-shield .ring:nth-child(1){width:120px;height:120px; animation-delay:0.0s}
+.fx-shield .ring:nth-child(2){width:120px;height:120px; animation-delay:0.6s; border-color:rgba(20,184,166,.7); box-shadow:0 0 20px rgba(20,184,166,.5)}
+.fx-shield .ring:nth-child(3){width:120px;height:120px; animation-delay:1.2s; border-color:rgba(16,185,129,.7); box-shadow:0 0 20px rgba(16,185,129,.5)}
+
+@keyframes shieldPulse{
+  0%   {opacity:0; transform:translate(-50%,-50%) scale(0.3)}
+  20%  {opacity:.9}
+  100% {opacity:0; transform:translate(-50%,-50%) scale(2.8)}
+}
+
+/* Brilho central de proteção */
+.prod-card[data-cat="mecanica"].anim-once .fx-shield::before{
+  content:'';position:absolute;
+  top:50%; left:50%;
+  width:80px; height:80px;
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(34,197,94,.4) 0%,
+    rgba(20,184,166,.2) 50%,
+    transparent 80%);
+  transform:translate(-50%,-50%);
+  opacity:0;
+  animation:shieldCore 3s ease-out forwards;
+}
+@keyframes shieldCore{
+  0%, 100% {opacity:0}
+  20%      {opacity:1}
+  60%      {opacity:.6}
+  80%      {opacity:0}
+}
+
+/* ─── 🧪 QUÍMICA (cards data-cat="quimica") ──────────────── */
+.prod-card[data-cat="quimica"].anim-once .fx-chem{
+  animation:fxAppear 3s ease-out forwards;
+}
+
+.fx-chem .bubble{
+  position:absolute;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,.95) 0%,
+    rgba(132,204,22,.7) 30%,
+    rgba(101,163,13,.5) 70%,
+    transparent 100%);
+  filter:blur(1px);
+  box-shadow:0 0 12px rgba(132,204,22,.6);
+  opacity:0;
+}
+.prod-card[data-cat="quimica"].anim-once .fx-chem .bubble{
+  animation:bubbleRise 3s ease-out forwards;
+}
+.fx-chem .bubble:nth-child(1){left:15%; bottom:0; width:18px; height:18px; animation-delay:0.0s}
+.fx-chem .bubble:nth-child(2){left:35%; bottom:0; width:24px; height:24px; animation-delay:0.3s}
+.fx-chem .bubble:nth-child(3){left:55%; bottom:0; width:16px; height:16px; animation-delay:0.6s}
+.fx-chem .bubble:nth-child(4){left:75%; bottom:0; width:22px; height:22px; animation-delay:0.4s}
+.fx-chem .bubble:nth-child(5){left:90%; bottom:0; width:14px; height:14px; animation-delay:0.8s}
+.fx-chem .bubble:nth-child(6){left:25%; bottom:0; width:20px; height:20px; animation-delay:1.0s}
+.fx-chem .bubble:nth-child(7){left:65%; bottom:0; width:17px; height:17px; animation-delay:1.2s}
+
+@keyframes bubbleRise{
+  0%   {opacity:0; transform:translate(0,0) scale(0.5)}
+  20%  {opacity:.9}
+  60%  {opacity:.7}
+  100% {opacity:0; transform:translate(8px,-130px) scale(1.2)}
+}
+
+/* Névoa química verde-ácido de fundo */
+.prod-card[data-cat="quimica"].anim-once .fx-chem::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 100%,
+    rgba(132,204,22,.3) 0%,
+    rgba(101,163,13,.15) 40%,
+    transparent 70%);
+  opacity:0;
+  animation:chemMist 3s ease-out forwards;
+}
+@keyframes chemMist{
+  0%, 100% {opacity:0}
+  20%      {opacity:.8}
+  60%      {opacity:.5}
+  80%      {opacity:0}
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce){
+  .fx-fire .flame, .fx-fire .ember,
+  .fx-bolt svg, .prod-card.anim-once .fx-fire, .prod-card.anim-once .fx-bolt,
+  .fx-slash .blade, .fx-slash::before,
+  .fx-shield .ring, .fx-shield::before,
+  .fx-chem .bubble, .fx-chem::before{
+    animation:none !important;
+    opacity:0 !important;
+  }
+}
 
 </style>
 </head>
@@ -1579,6 +1889,10 @@ function openModal(id){
       </div>
     </div>
     <div class="mcta">
+      <button class="cta-share" onclick="compartilharProduto('${id}')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Compartilhar este EPI
+      </button>
       <a class="cta-wa" style="display:flex;align-items:center;gap:8px" href="${p.waLink}" target="_blank" rel="noopener noreferrer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Pedir orçamento via WhatsApp
@@ -1589,16 +1903,56 @@ function openModal(id){
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
         Gerar PDF
       </button>
-      <button class="cta-send" onclick="enviarFicha('${id}')">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enviar ficha
-      </button>
     </div>
     </div>`;
   document.getElementById('modal-bg').classList.add('open');
   document.body.style.overflow='hidden';
+  // Deep-link: atualiza URL pra #produto sem recarregar a página
+  if(history.pushState && location.hash !== '#'+id){
+    history.pushState({modal:id}, '', '#'+id);
+  }
 }
-function closeModal(){document.getElementById('modal-bg').classList.remove('open');document.body.style.overflow='';}
+function closeModal(){
+  document.getElementById('modal-bg').classList.remove('open');
+  document.body.style.overflow='';
+  // Remove o hash da URL ao fechar (sem recarregar)
+  if(history.pushState && location.hash){
+    history.pushState({modal:null}, '', location.pathname + location.search);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// COMPARTILHAR PRODUTO: mensagem híbrida (ficha resumida + link viral)
+// ═══════════════════════════════════════════════════════════════
+function compartilharProduto(id){
+  const p = PRODS[id];
+  if(!p) return;
+  // Extrai proteções, normas e aplicações dos HTMLs renderizados
+  const tmp = document.createElement('div');
+  tmp.innerHTML = p.protsHtml || '';
+  const prots = Array.from(tmp.querySelectorAll('.mprot'))
+    .map(e => e.textContent.trim()).join(' · ') || '—';
+  tmp.innerHTML = p.normsHtml || '';
+  const norms = Array.from(tmp.querySelectorAll('.mnorm'))
+    .map(e => e.textContent.trim()).join(' · ') || '—';
+  // URL completa do catálogo + hash do produto (deep-link)
+  const linkProduto = location.origin + location.pathname + '#' + id;
+  // Mensagem híbrida: resumo lê na hora + link pra ficha completa
+  const msg =
+    `🧤 *${p.nome}* — Uniluvas\n` +
+    `${p.cat} · ${p.ca || 'CA Aprovado'}\n\n` +
+    `📝 ${p.desc}\n\n` +
+    `🧵 *Material:* ${p.material}\n` +
+    `📏 *Tamanhos:* ${p.tamanhos}\n\n` +
+    `🛡️ *Proteções:* ${prots}\n` +
+    `📋 *Normas:* ${norms}\n\n` +
+    `▶️ *Ficha técnica completa:*\n${linkProduto}\n\n` +
+    `_Catálogo Uniluvas · Andrei Costa_\n` +
+    `Orçamentos: wa.me/559491286367`;
+  // Abre WhatsApp sem destinatário (usuário escolhe o contato)
+  const waUrl = 'https://wa.me/?text=' + encodeURIComponent(msg);
+  window.open(waUrl, '_blank', 'noopener,noreferrer');
+}
 function closeModalOut(e){if(e.target.id==='modal-bg')closeModal();}
 
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
@@ -1626,6 +1980,97 @@ if(filterBar){
     filterBar.style.boxShadow = window.scrollY > 100 ? '0 4px 20px rgba(0,0,0,.08)' : 'none';
   });
 }
+
+// ═══════════════════════════════════════════════════════════════
+// ANIMAÇÕES TEMÁTICAS POR CATEGORIA — Single-shot ao entrar na tela
+// 1 vez por carga. Refresh ou voltar à página pra ver de novo.
+// ═══════════════════════════════════════════════════════════════
+(function injetarAnimacoesTematicas(){
+  const pathRaio = '<path d="M16 0 L4 28 L13 28 L8 60 L26 24 L17 24 L22 0 Z" fill="#fde047"/>';
+  const svgRaio = idx => `<svg class="b${idx}" viewBox="0 0 30 60" xmlns="http://www.w3.org/2000/svg">${pathRaio}</svg>`;
+
+  document.querySelectorAll('.prod-card').forEach(card => {
+    const cat = card.dataset.cat;
+    let fxHTML = '';
+
+    if(cat === 'solda'){
+      // 5 chamas + 3 brasas (single-shot)
+      fxHTML = '<div class="fx-layer fx-fire">' +
+        '<div class="flame"></div><div class="flame"></div><div class="flame"></div>' +
+        '<div class="flame"></div><div class="flame"></div>' +
+        '<div class="ember"></div><div class="ember"></div><div class="ember"></div>' +
+      '</div>';
+    } else if(cat === 'eletrico'){
+      // 4 raios + glow elétrico (single-shot)
+      fxHTML = '<div class="fx-layer fx-bolt">' +
+        svgRaio(1) + svgRaio(2) + svgRaio(3) + svgRaio(4) +
+      '</div>';
+    } else if(cat === 'corte'){
+      // 3 lâminas em diagonal cortando o card + brilho metálico
+      fxHTML = '<div class="fx-layer fx-slash">' +
+        '<div class="blade"></div><div class="blade"></div><div class="blade"></div>' +
+      '</div>';
+    } else if(cat === 'mecanica'){
+      // 3 anéis de escudo expandindo do centro
+      fxHTML = '<div class="fx-layer fx-shield">' +
+        '<div class="ring"></div><div class="ring"></div><div class="ring"></div>' +
+      '</div>';
+    } else if(cat === 'quimica'){
+      // 7 bolhas químicas subindo + névoa verde
+      fxHTML = '<div class="fx-layer fx-chem">' +
+        '<div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>' +
+        '<div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>' +
+        '<div class="bubble"></div>' +
+      '</div>';
+    }
+
+    if(fxHTML){
+      card.insertAdjacentHTML('afterbegin', fxHTML);
+    }
+  });
+
+  // Observer single-shot: dispara 1 vez e para de observar
+  const animObs = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('anim-once');
+        observer.unobserve(entry.target); // 🎯 1 vez só
+      }
+    });
+  }, {
+    threshold: 0.25,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  // Observa TODAS as 5 categorias com animação
+  document.querySelectorAll(
+    '.prod-card[data-cat="solda"], .prod-card[data-cat="eletrico"], ' +
+    '.prod-card[data-cat="corte"], .prod-card[data-cat="mecanica"], ' +
+    '.prod-card[data-cat="quimica"]'
+  ).forEach(card => animObs.observe(card));
+})();
+
+// ═══════════════════════════════════════════════════════════════
+// DEEP-LINK: abre o modal quando a URL tem #produto
+// ═══════════════════════════════════════════════════════════════
+function abrirPorHash(){
+  const hash = location.hash.slice(1); // remove o #
+  if(hash && PRODS[hash]){
+    openModal(hash);
+  }
+}
+// Ao carregar a página, se tiver hash, abre o produto
+window.addEventListener('load', abrirPorHash);
+// Ao usar botão voltar/avançar do navegador, sincroniza modal com URL
+window.addEventListener('popstate', ()=>{
+  const hash = location.hash.slice(1);
+  if(hash && PRODS[hash]){
+    openModal(hash);
+  } else {
+    document.getElementById('modal-bg').classList.remove('open');
+    document.body.style.overflow='';
+  }
+});
 
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 // Fallback imediato para qualquer elemento já visível
@@ -1751,30 +2196,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   initCardTilt();
   initRevealStagger();
 });
-
-function enviarFicha(prodId){
-  var p=PRODS[prodId];if(!p)return;
-  var tmp=document.createElement('div');
-  tmp.innerHTML=p.protsHtml||'';
-  var prots=Array.from(tmp.querySelectorAll('.mprot')).map(function(e){return e.textContent.trim();}).join(' | ')||'—';
-  tmp.innerHTML=p.normsHtml||'';
-  var norms=Array.from(tmp.querySelectorAll('.mnorm')).map(function(e){return e.textContent.trim();}).join(' · ')||'—';
-  tmp.innerHTML=p.appsHtml||'';
-  var apps=Array.from(tmp.querySelectorAll('.mapp')).map(function(e){return e.textContent.trim();}).join(' | ')||'—';
-  var msg=
-    '📋 *FICHA TÉCNICA — '+p.nome.toUpperCase()+'*\n'+
-    '🏷️ '+p.cat+' · '+(p.ca||'CA Aprovado')+'\n\n'+
-    '📝 '+p.desc+'\n\n'+
-    '🧵 *Material:* '+p.material+'\n'+
-    '📏 *Tamanhos:* '+p.tamanhos+'\n\n'+
-    '🛡️ *Proteções:* '+prots+'\n\n'+
-    '📋 *Normas:* '+norms+'\n\n'+
-    '🏭 *Aplicações:* '+apps+'\n\n'+
-    '━━━━━━━━━━━━━━\n'+
-    '📩 *Andrei Costa · Uniluvas Parauapebas*\n'+
-    'Pedidos e orçamentos: wa.me/559491286367';
-  window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
-}
 
 </script>
 </body>
