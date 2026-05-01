@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- 🎨 FAVICON — TROCAR URL APÓS UPLOAD NO SITE                       -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- ⚠️ TROCAR: faça upload do favicon (recomendado 64x64 PNG) -->
+<link rel="icon" type="image/png" href="https://www.uniluvas.com.br/favicon.png"/>
+<link rel="apple-touch-icon" href="https://www.uniluvas.com.br/favicon.png"/>
+
 <title>Uniluvas · Guia de Proteção das Mãos 2026</title>
 <meta name="description" content="Catálogo oficial de EPIs Uniluvas — 17 produtos certificados CA/MTE para proteção das mãos. DuPont Kevlar e Nomex."/>
 <meta name="keywords" content="EPI, luvas Kevlar, luvas anti-corte, proteção das mãos, Uniluvas, mineração, Vale, certificado CA"/>
@@ -15,15 +23,17 @@
 <meta property="og:url" content="https://andreicosta8.github.io/catalogo-uniluvas/"/>
 <meta property="og:title" content="Uniluvas · Guia de Proteção das Mãos 2026"/>
 <meta property="og:description" content="🧤 17 EPIs certificados CA/MTE em 5 categorias de risco · DuPont™ Kevlar® e Nomex® · Fornecedora homologada Vale S.A."/>
-<meta property="og:image" content="https://www.uniluvas.com.br/wp-content/uploads/elementor/thumbs/uniluvas_logo_branco-pz44znqn49yzkes0ua7t82k4b2bf45tf5zqd88mu8e.png"/>
+<!-- ⚠️ TROCAR: faça upload da capa 1200x630 do CATÁLOGO (não o logo) -->
+<meta property="og:image" content="https://www.uniluvas.com.br/og-catalogo-2026.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Uniluvas - Catálogo de EPIs"/>
+<meta property="og:image:alt" content="Uniluvas - Catálogo de EPIs 2026"/>
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Uniluvas · Guia de Proteção das Mãos 2026"/>
 <meta name="twitter:description" content="🧤 17 EPIs certificados CA/MTE · DuPont™ Kevlar® e Nomex® · Fornecedora Vale S.A."/>
-<meta name="twitter:image" content="https://www.uniluvas.com.br/wp-content/uploads/elementor/thumbs/uniluvas_logo_branco-pz44znqn49yzkes0ua7t82k4b2bf45tf5zqd88mu8e.png"/>
+<!-- ⚠️ TROCAR: mesma URL da og:image -->
+<meta name="twitter:image" content="https://www.uniluvas.com.br/og-catalogo-2026.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@500&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -888,7 +898,134 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   BOTÕES PREV/NEXT NO MODAL (item 6)
+   ═══════════════════════════════════════════════════════════════ */
+.mnav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;height:44px;
+  border-radius:50%;
+  background:rgba(255,255,255,.92);
+  border:none;
+  color:var(--navy);
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  transition:all .2s ease;
+  z-index:5;
+}
+.mnav:hover{
+  background:white;
+  transform:translateY(-50%) scale(1.1);
+  box-shadow:0 6px 18px rgba(0,0,0,.2);
+}
+.mnav:active{transform:translateY(-50%) scale(.95)}
+.mprev{left:16px}
+.mnext{right:16px}
+@media (max-width:620px){
+  .mnav{width:38px;height:38px}
+  .mprev{left:8px}
+  .mnext{right:8px}
+}
+
+/* Indicador de rolar */
+.scroll-hint{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin:-8px auto 24px;
+  padding:14px 24px;
+  max-width:300px;
+  border-radius:50px;
+  background:linear-gradient(135deg, rgba(255,255,255,.95), rgba(248,250,252,.95));
+  border:1.5px solid var(--border);
+  color:var(--navy);
+  font-size:13px;font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  transition:all .3s ease;
+  box-shadow:0 4px 14px rgba(0,0,0,.04);
+}
+.scroll-hint:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  border-color:var(--gold);
+}
+.scroll-hint-arrow{animation:bounceArrow 2s ease-in-out infinite}
+@keyframes bounceArrow{
+  0%, 100% {transform:translateY(0)}
+  50%      {transform:translateY(4px)}
+}
+@media (max-width:620px){
+  .scroll-hint{max-width:90%;font-size:12px;padding:12px 18px}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BOTÃO "VOLTAR AO TOPO" (item 8)
+   ═══════════════════════════════════════════════════════════════ */
+.back-to-top{
+  position:fixed;
+  bottom:24px; right:24px;
+  width:48px; height:48px;
+  border-radius:50%;
+  background:var(--navy);
+  color:white;
+  border:none;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(20px) scale(.9);
+  transition:all .3s ease;
+  z-index:99;
+}
+.back-to-top.visible{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0) scale(1);
+}
+.back-to-top:hover{
+  background:var(--gold);
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 28px rgba(0,0,0,.3);
+}
+@media (max-width:620px){
+  .back-to-top{bottom:80px; right:16px; width:44px; height:44px}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   POLIMENTO: variação por card (item 7) + telas grandes (item 4)
+   Cada card recebe um delay aleatório via CSS variable --anim-offset
+   (definido pelo JS) pra animações ficarem dessincronizadas
+   ═══════════════════════════════════════════════════════════════ */
+.prod-card.anim-once .fx-layer{
+  animation-delay: var(--anim-offset, 0s) !important;
+}
+
+/* Em telas muito grandes, ajusta densidade das chamas/raios */
+@media (min-width:1600px){
+  .fx-fire .flame:nth-child(1){left:12%}
+  .fx-fire .flame:nth-child(5){left:80%}
+  .fx-bolt svg.b1{left:18%}
+  .fx-bolt svg.b2{right:22%}
+}
+
 </style>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- 📊 MICROSOFT CLARITY — Catálogo Uniluvas (configurado em 30/abr/26) -->
+<!-- Project ID: wjy38mye47                                            -->
+<!-- Acompanhar em: https://clarity.microsoft.com                     -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "wjy38mye47");
+</script>
+
 </head>
 <body>
 
@@ -1011,6 +1148,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
     <div class="dupont-text">O DuPont™ Kevlar® tem resistência à tração 5× superior ao aço no mesmo peso. O DuPont™ Nomex® protege contra calor e chama sem derreter, queimar ou propagar chama. As mesmas fibras usadas em coletes balísticos, trajes da F1 e fardamentos de bombeiros — agora nas suas luvas Uniluvas.</div>
   </div>
 </div>
+
+<!-- Indicador sutil de rolar pra ver os 17 EPIs -->
+<a href="#epis" class="scroll-hint" aria-label="Rolar para ver os EPIs">
+  <span class="scroll-hint-text">17 EPIs · role para explorar</span>
+  <svg class="scroll-hint-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
+</a>
 
 <!-- FILTER -->
 <div class="filter-bar" id="epis">
@@ -1864,10 +2009,18 @@ try{ document.querySelectorAll('.fpill').forEach(b=>b.addEventListener('click',(
 
 function openModal(id){
   const p=PRODS[id]; if(!p) return;
+  // Atualiza ID corrente pra navegação prev/next
+  window._currentProductId = id;
   document.getElementById('modal-box').innerHTML=`
     <div class="mhero" style="background:${p.accentBg}">
       <div style="position:relative;z-index:1">${p.imgHtml}</div>
-      <button class="mclose" onclick="closeModal()">✕</button>
+      <button class="mclose" onclick="closeModal()" aria-label="Fechar">✕</button>
+      <button class="mnav mprev" onclick="prevProd()" aria-label="Produto anterior" title="Anterior (←)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="mnav mnext" onclick="nextProd()" aria-label="Próximo produto" title="Próximo (→)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
     <div class="mbody">
       <div class="mcat">${p.cat}</div>
@@ -1915,11 +2068,51 @@ function openModal(id){
 function closeModal(){
   document.getElementById('modal-bg').classList.remove('open');
   document.body.style.overflow='';
+  window._currentProductId = null;
   // Remove o hash da URL ao fechar (sem recarregar)
   if(history.pushState && location.hash){
     history.pushState({modal:null}, '', location.pathname + location.search);
   }
 }
+
+// ═══════════════════════════════════════════════════════════════
+// NAVEGAÇÃO PREV/NEXT NO MODAL (item 6)
+// Respeita o filtro de categoria atual (só navega entre cards visíveis)
+// ═══════════════════════════════════════════════════════════════
+function getVisibleProductIds(){
+  // Pega IDs dos cards atualmente visíveis (respeita filtro de categoria)
+  return Array.from(document.querySelectorAll('.prod-card'))
+    .filter(card => card.style.display !== 'none')
+    .map(card => {
+      const onclickAttr = card.getAttribute('onclick') || '';
+      const match = onclickAttr.match(/openModal\('([^']+)'\)/);
+      return match ? match[1] : null;
+    })
+    .filter(Boolean);
+}
+function navigateProduct(direction){
+  const currentId = window._currentProductId;
+  if(!currentId) return;
+  const ids = getVisibleProductIds();
+  const idx = ids.indexOf(currentId);
+  if(idx === -1) return;
+  // Navegação circular: depois do último volta pro primeiro e vice-versa
+  let nextIdx;
+  if(direction === 'next') nextIdx = (idx + 1) % ids.length;
+  else nextIdx = (idx - 1 + ids.length) % ids.length;
+  openModal(ids[nextIdx]);
+}
+function prevProd(){ navigateProduct('prev'); }
+function nextProd(){ navigateProduct('next'); }
+
+// Atalhos de teclado: ←/→ navegam, ESC fecha
+document.addEventListener('keydown', (e) => {
+  // Só age se o modal estiver aberto
+  if(!document.getElementById('modal-bg').classList.contains('open')) return;
+  if(e.key === 'ArrowLeft') prevProd();
+  else if(e.key === 'ArrowRight') nextProd();
+  else if(e.key === 'Escape') closeModal();
+});
 
 // ═══════════════════════════════════════════════════════════════
 // COMPARTILHAR PRODUTO: mensagem híbrida (ficha resumida + link viral)
@@ -2197,6 +2390,42 @@ document.addEventListener('DOMContentLoaded',()=>{
   initRevealStagger();
 });
 
+// ═══════════════════════════════════════════════════════════════
+// BOTÃO "VOLTAR AO TOPO" (item 8)
+// ═══════════════════════════════════════════════════════════════
+const backToTopBtn = document.querySelector('.back-to-top');
+if(backToTopBtn){
+  // Mostra/esconde baseado em scroll
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 600){
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  }, {passive: true});
+  // Click rola suavemente pro topo
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// VARIAÇÃO ALEATÓRIA POR CARD (item 7)
+// Cada card recebe um delay 0-300ms aleatório pra dessincronizar animações
+// ═══════════════════════════════════════════════════════════════
+document.querySelectorAll('.prod-card[data-cat]').forEach(card => {
+  const offset = Math.random() * 0.3; // 0 a 300ms
+  card.style.setProperty('--anim-offset', offset + 's');
+});
+
 </script>
+
+<!-- Botão flutuante "Voltar ao topo" (item 8) -->
+<button class="back-to-top" aria-label="Voltar ao topo">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
 </body>
 </html>
