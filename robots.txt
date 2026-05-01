@@ -1,0 +1,44 @@
+# robots.txt — Catálogo Uniluvas
+# Gerado em: Maio 2026
+
+# ──────────────────────────────────────────────────
+# MOTORES DE BUSCA — liberados
+# ──────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ──────────────────────────────────────────────────
+# REDES SOCIAIS — crawlers de preview (OG Image)
+# Sem isso, WhatsApp/Facebook/LinkedIn não conseguem
+# buscar a og:image e o preview fica sem foto.
+# ──────────────────────────────────────────────────
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# ──────────────────────────────────────────────────
+# TODOS OS OUTROS — liberados por padrão
+# (catálogo é público, não há conteúdo sensível)
+# ──────────────────────────────────────────────────
+User-agent: *
+Allow: /
