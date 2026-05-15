@@ -1011,6 +1011,522 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
   .fx-bolt svg.b2{right:22%}
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   LOJA DE FÁBRICA
+   ═══════════════════════════════════════════════════════════════ */
+.store-section{
+  max-width:1100px;margin:0 auto 32px;
+  padding:0 24px;
+}
+.store-card{
+  background:#fff;
+  border-radius:20px;
+  border:1.5px solid var(--border);
+  box-shadow:0 4px 24px rgba(0,0,0,.06);
+  overflow:hidden;
+  position:relative;
+  transition:box-shadow .2s;
+}
+.store-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1)}
+
+/* Badge "Loja de Fábrica" no topo */
+.store-badge{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 24px;
+  background:linear-gradient(135deg,var(--navy),#1e3a5f);
+  color:rgba(255,255,255,.92);
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+}
+.store-badge svg{opacity:.8}
+
+/* Corpo: foto + info lado a lado */
+.store-body{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  min-height:260px;
+}
+
+/* FOTO */
+.store-photo{
+  position:relative;overflow:hidden;
+  background:var(--off);
+}
+.store-photo-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.store-photo-placeholder{
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;
+  width:100%;height:100%;min-height:220px;
+  color:var(--muted);text-align:center;padding:24px;
+}
+.store-photo-placeholder span{font-size:13px;font-weight:600;color:var(--navy)}
+.store-photo-placeholder small{font-size:11px;color:var(--muted)}
+.store-photo-placeholder code{
+  background:var(--off);border:1px solid var(--border);
+  padding:1px 6px;border-radius:4px;
+  font-size:11px;color:var(--navy);
+}
+
+/* INFO */
+.store-info{
+  padding:24px 28px;
+  display:flex;flex-direction:column;gap:16px;
+  justify-content:center;
+}
+.store-name{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;
+  color:var(--navy);margin:0;
+  line-height:1.2;
+}
+
+/* Linha de detalhe (ícone + label + valor) */
+.store-detail{
+  display:flex;align-items:flex-start;gap:12px;
+}
+.store-icon-wrap{
+  width:32px;height:32px;
+  background:var(--off);border-radius:8px;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  color:var(--gold);margin-top:2px;
+}
+.store-detail-label{
+  font-size:10px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:3px;
+}
+.store-detail-value{
+  font-size:13.5px;color:var(--navy);line-height:1.55;
+}
+
+/* Horários em linhas inline */
+.store-hours-row{
+  display:flex;gap:10px;align-items:center;
+  font-size:13.5px;color:var(--navy);
+}
+.store-hours-row strong{min-width:60px;font-weight:700}
+.store-hours-row span{color:var(--muted)}
+
+/* Botões de ação */
+.store-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.store-btn{
+  display:flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:10px;
+  font-size:13px;font-weight:700;
+  text-decoration:none;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.store-btn-wa{
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;
+  box-shadow:0 4px 12px rgba(37,211,102,.3);
+}
+.store-btn-wa:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.4)}
+.store-btn-maps{
+  background:#fff;
+  border:1.5px solid var(--border);
+  color:var(--navy);
+}
+.store-btn-maps:hover{
+  background:var(--off);
+  border-color:var(--navy);
+  transform:translateY(-2px);
+}
+
+/* Responsivo */
+/* ═══════════════════════════════════════════════════════════════
+   FEATURE 1 — BARRA DE BUSCA
+   ═══════════════════════════════════════════════════════════════ */
+.search-bar{
+  max-width:1100px;
+  margin:0 auto 16px;
+  padding:0 24px;
+}
+.search-inner{
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:#fff;
+  border:1.5px solid var(--border);
+  border-radius:50px;
+  padding:0 18px;
+  transition:all .2s;
+  box-shadow:0 2px 8px rgba(0,0,0,.03);
+}
+.search-inner:focus-within{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(212,160,23,.12), 0 2px 12px rgba(0,0,0,.06);
+}
+.search-icon{
+  color:var(--muted);
+  margin-right:10px;
+  flex-shrink:0;
+}
+.search-input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  font-weight:500;
+  color:var(--navy);
+  padding:14px 0;
+}
+.search-input::placeholder{color:var(--muted);font-weight:400}
+.search-clear{
+  display:none;
+  background:var(--off);
+  border:none;
+  width:28px;height:28px;
+  border-radius:50%;
+  cursor:pointer;
+  align-items:center;justify-content:center;
+  color:var(--muted);
+  transition:all .15s;
+}
+.search-clear.visible{display:flex}
+.search-clear:hover{background:#e2e8f0;color:var(--navy)}
+@media(max-width:760px){
+  .search-bar{padding:0 16px}
+  .search-input{font-size:14px}
+}
+
+/* Mensagem quando não tem resultado da busca */
+.no-results{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--muted);
+  font-size:14px;
+  display:none;
+}
+.no-results.visible{display:block}
+.no-results strong{color:var(--navy);display:block;font-size:16px;margin-bottom:4px}
+
+/* ═══════════════════════════════════════════════════════════════
+   FEATURE 2 — COMPARADOR DE EPIs
+   ═══════════════════════════════════════════════════════════════ */
+/* Botão "Comparar" em cada card */
+.compare-btn{
+  position:absolute;top:14px;right:14px;
+  width:32px;height:32px;
+  background:rgba(255,255,255,.95);
+  border:1.5px solid var(--border);
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--navy);
+  transition:all .2s;
+  z-index:4;
+  backdrop-filter:blur(6px);
+}
+.compare-btn:hover{
+  background:#fff;
+  border-color:var(--gold);
+  color:var(--gold);
+  transform:scale(1.1);
+}
+.compare-btn.active{
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#fff;
+}
+.compare-btn.active:hover{
+  background:#b8870a;
+  color:#fff;
+}
+.compare-btn svg{transition:transform .2s}
+.compare-btn.active svg{transform:rotate(45deg)}
+
+/* Card selecionado: borda destacada */
+.prod-card.selected-for-compare{
+  border:2px solid var(--gold) !important;
+  box-shadow:0 0 0 4px rgba(212,160,23,.15), 0 8px 24px rgba(0,0,0,.08);
+}
+
+/* Barra flutuante "Comparar (N)" */
+.compare-bar{
+  position:fixed;
+  bottom:24px;left:50%;
+  transform:translateX(-50%) translateY(120px);
+  background:var(--navy);
+  color:#fff;
+  padding:12px 16px;
+  border-radius:50px;
+  display:flex;align-items:center;gap:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,.3);
+  z-index:90;
+  opacity:0;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+  font-family:'DM Sans',sans-serif;
+}
+.compare-bar.visible{
+  transform:translateX(-50%) translateY(0);
+  opacity:1;
+}
+.compare-count{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;
+  padding-left:8px;
+  color:rgba(255,255,255,.95);
+}
+.compare-clear{
+  background:rgba(255,255,255,.1);
+  border:none;
+  color:rgba(255,255,255,.85);
+  padding:8px 14px;
+  border-radius:30px;
+  font-size:12px;font-weight:600;
+  cursor:pointer;
+  transition:all .15s;
+  font-family:'DM Sans',sans-serif;
+}
+.compare-clear:hover{background:rgba(255,255,255,.2);color:#fff}
+.compare-go{
+  background:var(--gold);
+  border:none;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:30px;
+  font-size:13px;font-weight:700;
+  cursor:pointer;
+  display:flex;align-items:center;gap:6px;
+  transition:all .2s;
+  font-family:'DM Sans',sans-serif;
+}
+.compare-go:hover{background:#b8870a;transform:translateX(3px)}
+@media(max-width:620px){
+  .compare-bar{left:16px;right:16px;transform:translateY(120px);bottom:16px}
+  .compare-bar.visible{transform:translateY(0)}
+  .compare-count span{font-size:12px}
+}
+
+/* Modal de comparação */
+.compare-modal{
+  position:fixed;inset:0;
+  background:rgba(15,30,53,.85);
+  backdrop-filter:blur(8px);
+  z-index:200;
+  display:none;
+  align-items:flex-start;justify-content:center;
+  padding:24px;
+  overflow-y:auto;
+}
+.compare-modal.open{display:flex}
+.compare-modal-box{
+  background:#fff;
+  border-radius:20px;
+  max-width:1100px;
+  width:100%;
+  padding:32px;
+  position:relative;
+  box-shadow:0 24px 72px rgba(0,0,0,.4);
+  margin:auto 0;
+}
+.compare-modal-close{
+  position:absolute;top:18px;right:18px;
+  width:36px;height:36px;
+  border-radius:50%;
+  background:var(--off);border:none;
+  font-size:16px;color:var(--navy);
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;
+}
+.compare-modal-close:hover{background:#e2e8f0;transform:rotate(90deg)}
+.compare-modal-title{
+  font-family:'Playfair Display',serif;
+  font-size:24px;font-weight:700;
+  color:var(--navy);
+  margin:0 0 24px;
+  text-align:center;
+}
+
+/* Grid de comparação: 2 ou 3 colunas */
+.compare-grid{
+  display:grid;
+  grid-template-columns:200px repeat(var(--cols, 2), 1fr);
+  gap:0;
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+}
+.compare-row{
+  display:contents;
+}
+.compare-cell{
+  padding:14px 16px;
+  border-bottom:1px solid var(--border);
+  font-size:13px;
+  color:var(--navy);
+  line-height:1.45;
+  background:#fff;
+}
+.compare-row:last-child .compare-cell{border-bottom:none}
+.compare-cell-label{
+  background:var(--off);
+  font-weight:700;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  color:var(--muted);
+  display:flex;align-items:center;
+}
+.compare-cell-head{
+  padding:16px;
+  background:linear-gradient(135deg, #f8fafc, #fff);
+  border-bottom:1.5px solid var(--border);
+  text-align:center;
+}
+.compare-cell-head img{
+  max-width:120px;
+  max-height:100px;
+  margin:0 auto 10px;
+  display:block;
+}
+.compare-cell-head .name{
+  font-weight:700;
+  font-size:14px;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.compare-cell-head .ca{
+  font-size:11px;
+  color:var(--gold);
+  font-weight:600;
+}
+.compare-mnorm{
+  display:inline-block;
+  background:var(--off);
+  border:1px solid var(--border);
+  padding:2px 8px;
+  border-radius:6px;
+  font-size:11px;
+  margin:2px 3px 2px 0;
+  color:var(--navy);
+}
+
+@media(max-width:760px){
+  .compare-modal-box{padding:20px 16px}
+  .compare-grid{grid-template-columns:120px repeat(var(--cols, 2), 1fr)}
+  .compare-cell{padding:10px 8px;font-size:12px}
+  .compare-cell-label{font-size:10px}
+  .compare-cell-head img{max-width:80px;max-height:70px}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FEATURE 3 — BOTÃO PDF COMPLETO no footer
+   ═══════════════════════════════════════════════════════════════ */
+.footer-pdf-wrap{
+  margin-top:24px;
+  padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:center;
+}
+.footer-pdf-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  background:linear-gradient(135deg, #d4a017, #b8870a);
+  color:#fff;
+  border:none;
+  padding:14px 24px;
+  border-radius:14px;
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  font-weight:700;
+  font-size:14px;
+  transition:all .2s;
+  box-shadow:0 6px 18px rgba(212,160,23,.35);
+  max-width:480px;
+  width:100%;
+}
+.footer-pdf-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(212,160,23,.5);
+}
+.footer-pdf-btn svg{flex-shrink:0;opacity:.95}
+.footer-pdf-btn .footer-btn-text{
+  display:flex;flex-direction:column;align-items:flex-start;
+  text-align:left;
+}
+.footer-pdf-btn .footer-btn-label{
+  font-size:14px;
+  font-weight:700;
+}
+.footer-pdf-btn .footer-btn-sub{
+  font-size:11px;
+  font-weight:500;
+  opacity:.85;
+  margin-top:2px;
+}
+@media(max-width:620px){
+  .footer-pdf-btn{padding:12px 18px;font-size:13px}
+}
+
+/* CSS de impressão para PDF Completo — só este conteúdo aparece */
+.pdf-completo-wrap{display:none}
+@media print{
+  body.pdf-completo-mode > *:not(.pdf-completo-wrap){display:none !important}
+  body.pdf-completo-mode .pdf-completo-wrap{display:block !important}
+  body.pdf-completo-mode{background:#fff !important}
+  .pdf-completo-page{
+    page-break-after:always;
+    padding:40px 30px;
+    font-family:'DM Sans',sans-serif;
+  }
+  .pdf-completo-page:last-child{page-break-after:auto}
+  .pdf-completo-page .ph-cover{
+    text-align:center;
+    border-bottom:3px solid #d4a017;
+    padding-bottom:20px;
+    margin-bottom:24px;
+  }
+  .pdf-completo-page .ph-cover h1{
+    font-family:'Playfair Display',serif;
+    font-size:42px;margin:0 0 8px;color:#0f1e35;
+  }
+  .pdf-completo-page .ph-cover p{
+    font-size:14px;color:#64748b;margin:0;
+  }
+  .pdf-completo-page h2{
+    font-family:'Playfair Display',serif;
+    font-size:22px;margin:0 0 12px;color:#0f1e35;
+  }
+  .pdf-completo-page .pp-ca{
+    display:inline-block;
+    background:#fef3c7;color:#92400e;
+    font-weight:700;font-size:11px;
+    padding:3px 10px;border-radius:5px;
+    margin-bottom:8px;
+  }
+  .pdf-completo-page .pp-cat{
+    font-size:12px;color:#64748b;margin-bottom:14px;
+  }
+  .pdf-completo-page .pp-desc{
+    font-size:13px;color:#0f1e35;line-height:1.6;
+    margin-bottom:14px;
+  }
+  .pdf-completo-page .pp-section{
+    margin-bottom:12px;
+  }
+  .pdf-completo-page .pp-section .label{
+    font-size:10px;font-weight:700;text-transform:uppercase;
+    letter-spacing:.05em;color:#94a3b8;margin-bottom:4px;
+  }
+  .pdf-completo-page .pp-section .value{
+    font-size:12.5px;color:#0f1e35;line-height:1.55;
+  }
+  .pdf-completo-page .pp-img{
+    max-width:200px;max-height:160px;
+    float:right;margin:0 0 12px 16px;
+  }
+}
+
 </style>
 
 <!-- ════════════════════════════════════════════════════════════════ -->
@@ -1156,6 +1672,93 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
     <polyline points="6 9 12 15 18 9"/>
   </svg>
 </a>
+
+<!-- LOJA DE FÁBRICA -->
+<section class="store-section">
+  <div class="store-card">
+    <!-- Badge topo -->
+    <div class="store-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      Loja de Fábrica
+    </div>
+
+    <div class="store-body">
+      <!-- Foto (placeholder até upload da fachada) -->
+      <div class="store-photo" id="store-photo-wrap">
+        <img
+          src="https://andreicosta8.github.io/catalogo-uniluvas/loja.jpg"
+          alt="Fachada Uniluvas Parauapebas"
+          class="store-photo-img"
+          onerror="this.style.display='none';document.getElementById('store-photo-placeholder').style.display='flex';"
+        />
+        <div class="store-photo-placeholder" id="store-photo-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Foto da fachada</span>
+          <small>Suba <code>loja.jpg</code> no repositório</small>
+        </div>
+      </div>
+
+      <!-- Informações da loja -->
+      <div class="store-info">
+        <h2 class="store-name">Uniluvas Parauapebas</h2>
+
+        <div class="store-detail">
+          <div class="store-icon-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="store-detail-label">Endereço</div>
+            <div class="store-detail-value">Rua 24 de Março, 1206<br>Esq. Rua Lauro Corona · Bairro da Paz<br>Parauapebas — PA</div>
+          </div>
+        </div>
+
+        <div class="store-detail">
+          <div class="store-icon-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="store-detail-label">Horário de funcionamento</div>
+            <div class="store-detail-value">
+              <span class="store-hours-row"><strong>Seg–Sex</strong><span>08h às 17h</span></span>
+              <span class="store-hours-row"><strong>Sábado</strong><span>08h às 12h</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botões de ação -->
+        <div class="store-actions">
+          <a class="store-btn store-btn-wa"
+            href="https://wa.me/559491286367?text=Olá%2C%20vim%20pelo%20catálogo%20Uniluvas%20e%20quero%20saber%20mais%20sobre%20a%20loja%20de%20fábrica."
+            target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a class="store-btn store-btn-maps"
+            href="https://maps.google.com/?q=Rua+24+de+Março+1206+Bairro+da+Paz+Parauapebas+PA"
+            target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ver no Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BARRA DE BUSCA -->
+<div class="search-bar">
+  <div class="search-inner">
+    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="search-input" class="search-input"
+      placeholder="Buscar por CA, nome ou material..."
+      oninput="filterSearch(this.value)" autocomplete="off"/>
+    <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Limpar busca">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</div>
 
 <!-- FILTER -->
 <div class="filter-bar" id="epis">
@@ -1685,6 +2288,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
       </div>
     </a>
   </div>
+
+  <!-- Botão PDF Catálogo Completo -->
+  <div class="footer-pdf-wrap">
+    <button class="footer-pdf-btn" onclick="gerarPDFCompleto()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <div class="footer-btn-text">
+        <span class="footer-btn-label">Baixar Catálogo Completo (PDF)</span>
+        <span class="footer-btn-sub">17 EPIs · 5 categorias · Formato A4</span>
+      </div>
+    </button>
+  </div>
 </footer>
 
 <!-- MODAL -->
@@ -1965,10 +2579,20 @@ function filterCat(cat){
     const btn=document.querySelector(`[data-f="${cat}"]`);
     if(btn)btn.classList.add('on');
 
-    // 3 — mostrar/ocultar cards
+    // 3 — mostrar/ocultar cards (RESPEITA BUSCA + categoria)
     let n=0;
     document.querySelectorAll('.prod-card').forEach(c=>{
-      const show=cat==='todos'||(c.dataset.cat||'').split(' ').includes(cat);
+      const catMatch=cat==='todos'||(c.dataset.cat||'').split(' ').includes(cat);
+      // Combina com busca atual
+      let searchMatch = true;
+      if(typeof _searchTerm !== 'undefined' && _searchTerm){
+        const m = (c.getAttribute('onclick') || '').match(/openModal\('([^']+)'\)/);
+        const prod = m ? (PRODS[m[1]] || {}) : {};
+        const text = [prod.nome, prod.ca, prod.cat, prod.material, prod.desc]
+          .filter(Boolean).join(' ').toLowerCase();
+        searchMatch = text.includes(_searchTerm);
+      }
+      const show = catMatch && searchMatch;
       c.classList.toggle('hidden',!show);
       c.style.opacity='0';
       c.style.transform='scale(.93) translateY(10px)';
@@ -2418,6 +3042,271 @@ document.querySelectorAll('.prod-card[data-cat]').forEach(card => {
   card.style.setProperty('--anim-offset', offset + 's');
 });
 
+// ═══════════════════════════════════════════════════════════════
+// FEATURE 1 — BUSCA POR CA / NOME / MATERIAL
+// ═══════════════════════════════════════════════════════════════
+let _searchTerm = '';
+function filterSearch(term){
+  _searchTerm = (term || '').toLowerCase().trim();
+  const clearBtn = document.getElementById('search-clear');
+  if(clearBtn) clearBtn.classList.toggle('visible', _searchTerm.length > 0);
+  applyFilters();
+}
+function clearSearch(){
+  const input = document.getElementById('search-input');
+  if(input) input.value = '';
+  filterSearch('');
+}
+function applyFilters(){
+  // Categoria ativa (do filter-bar)
+  const activeBtn = document.querySelector('.fpill.on');
+  const cat = activeBtn ? activeBtn.dataset.f : 'todos';
+  let visibleCount = 0;
+  document.querySelectorAll('.prod-card').forEach(card => {
+    const id = (card.getAttribute('onclick') || '').match(/openModal\('([^']+)'\)/);
+    const prodId = id ? id[1] : '';
+    const prod = PRODS[prodId] || {};
+    // Texto buscável: nome + CA + categoria + material + descrição
+    const searchable = [
+      prod.nome, prod.ca, prod.cat, prod.material, prod.desc
+    ].filter(Boolean).join(' ').toLowerCase();
+    const matchesSearch = !_searchTerm || searchable.includes(_searchTerm);
+    const matchesCat = cat === 'todos' || (card.dataset.cat || '').split(' ').includes(cat);
+    const show = matchesSearch && matchesCat;
+    card.classList.toggle('hidden', !show);
+    if(show) visibleCount++;
+  });
+  // Atualiza contador
+  const fc = document.getElementById('fc');
+  if(fc) fc.textContent = visibleCount + ' EPI' + (visibleCount !== 1 ? 's' : '');
+  // Mensagem "Nenhum resultado"
+  let noResults = document.getElementById('no-results');
+  if(!noResults){
+    noResults = document.createElement('div');
+    noResults.id = 'no-results';
+    noResults.className = 'no-results';
+    noResults.innerHTML = '<strong>Nenhum EPI encontrado</strong>Tente outro termo ou limpe o filtro.';
+    const grid = document.querySelector('.prod-grid');
+    if(grid) grid.parentNode.insertBefore(noResults, grid.nextSibling);
+  }
+  noResults.classList.toggle('visible', visibleCount === 0);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FEATURE 2 — COMPARADOR DE EPIs (máx 3)
+// ═══════════════════════════════════════════════════════════════
+const MAX_COMPARE = 3;
+let _compareList = [];
+
+function toggleCompare(prodId, event){
+  if(event){ event.stopPropagation(); event.preventDefault(); }
+  const idx = _compareList.indexOf(prodId);
+  if(idx >= 0){
+    _compareList.splice(idx, 1);
+  } else {
+    if(_compareList.length >= MAX_COMPARE){
+      alert('Você pode comparar no máximo ' + MAX_COMPARE + ' EPIs por vez.\nDesmarque um produto para adicionar outro.');
+      return;
+    }
+    _compareList.push(prodId);
+  }
+  updateCompareUI();
+}
+
+function updateCompareUI(){
+  // Atualiza estado visual dos cards e botões
+  document.querySelectorAll('.prod-card').forEach(card => {
+    const m = (card.getAttribute('onclick') || '').match(/openModal\('([^']+)'\)/);
+    const pid = m ? m[1] : '';
+    const selected = _compareList.includes(pid);
+    card.classList.toggle('selected-for-compare', selected);
+    const btn = card.querySelector('.compare-btn');
+    if(btn) btn.classList.toggle('active', selected);
+  });
+  // Atualiza barra flutuante
+  const bar = document.getElementById('compare-bar');
+  const txt = document.getElementById('compare-count-text');
+  if(bar){
+    bar.classList.toggle('visible', _compareList.length >= 2);
+    if(txt) txt.textContent = _compareList.length + ' produto' + (_compareList.length !== 1 ? 's' : '');
+  }
+}
+
+function clearCompare(){
+  _compareList = [];
+  updateCompareUI();
+}
+
+function openCompareModal(){
+  if(_compareList.length < 2){
+    alert('Selecione pelo menos 2 EPIs para comparar.');
+    return;
+  }
+  const grid = document.getElementById('compare-grid');
+  if(!grid) return;
+  // Define quantas colunas (2 ou 3)
+  grid.style.setProperty('--cols', _compareList.length);
+  // Extrai dados (proteções, normas, aplicações) do HTML armazenado
+  function extractList(html, selector){
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html || '';
+    return Array.from(tmp.querySelectorAll(selector))
+      .map(e => e.textContent.trim());
+  }
+  // Linhas do comparativo
+  const rows = [
+    { label: 'Categoria', value: p => p.cat || '—' },
+    { label: 'CA', value: p => p.ca || '—' },
+    { label: 'Material', value: p => p.material || '—' },
+    { label: 'Tamanhos', value: p => p.tamanhos || '—' },
+    { label: 'Proteções', value: p => {
+        const arr = extractList(p.protsHtml, '.mprot');
+        return arr.length ? arr.join(' · ') : '—';
+      }
+    },
+    { label: 'Normas', value: p => {
+        const arr = extractList(p.normsHtml, '.mnorm');
+        return arr.length ? arr.map(n => '<span class="compare-mnorm">'+n+'</span>').join('') : '—';
+      }
+    },
+    { label: 'Aplicações', value: p => {
+        const arr = extractList(p.appsHtml, '.mapp');
+        return arr.length ? arr.join(' · ') : '—';
+      }
+    },
+    { label: 'Usar quando', value: p => {
+        const arr = extractList(p.valHtml, '.mval-item');
+        return arr.length ? arr.join(' · ') : '—';
+      }
+    },
+    { label: 'NÃO usar', value: p => {
+        const arr = extractList(p.naoHtml, '.mnao-item');
+        return arr.length ? arr.join(' · ') : '—';
+      }
+    },
+  ];
+  // Monta o HTML do grid
+  let html = '<div class="compare-row">';
+  html += '<div class="compare-cell compare-cell-label"></div>';
+  _compareList.forEach(pid => {
+    const p = PRODS[pid] || {};
+    html += '<div class="compare-cell compare-cell-head">' +
+              (p.imgHtml || '') +
+              '<div class="name">' + (p.nome || pid) + '</div>' +
+              '<div class="ca">' + (p.ca || '') + '</div>' +
+            '</div>';
+  });
+  html += '</div>';
+  rows.forEach(row => {
+    html += '<div class="compare-row">';
+    html += '<div class="compare-cell compare-cell-label">' + row.label + '</div>';
+    _compareList.forEach(pid => {
+      const p = PRODS[pid] || {};
+      html += '<div class="compare-cell">' + row.value(p) + '</div>';
+    });
+    html += '</div>';
+  });
+  grid.innerHTML = html;
+  document.getElementById('compare-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCompareModal(event){
+  if(event && event.target && event.target.id !== 'compare-modal' && !event.target.classList.contains('compare-modal-close')) return;
+  document.getElementById('compare-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Injeta botão "+ Comparar" em cada prod-card após o DOM carregar
+function injectCompareButtons(){
+  document.querySelectorAll('.prod-card').forEach(card => {
+    if(card.querySelector('.compare-btn')) return; // já tem
+    const m = (card.getAttribute('onclick') || '').match(/openModal\('([^']+)'\)/);
+    const pid = m ? m[1] : '';
+    if(!pid) return;
+    const btn = document.createElement('button');
+    btn.className = 'compare-btn';
+    btn.setAttribute('aria-label', 'Adicionar ao comparativo');
+    btn.setAttribute('title', 'Comparar este EPI');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+    btn.setAttribute('onclick', 'toggleCompare(\''+pid+'\', event)');
+    // Adiciona DENTRO do prod-img-wrap pra ficar no topo direito da imagem
+    const imgWrap = card.querySelector('.prod-img-wrap');
+    if(imgWrap) imgWrap.appendChild(btn);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FEATURE 3 — PDF do CATÁLOGO COMPLETO
+// ═══════════════════════════════════════════════════════════════
+function gerarPDFCompleto(){
+  // Constrói (1x só) o container com todas as fichas em formato de impressão
+  let wrap = document.querySelector('.pdf-completo-wrap');
+  if(!wrap){
+    wrap = document.createElement('div');
+    wrap.className = 'pdf-completo-wrap';
+    // Página de capa
+    wrap.innerHTML = '<div class="pdf-completo-page">' +
+      '<div class="ph-cover">' +
+        '<h1>Catálogo Uniluvas 2026</h1>' +
+        '<p>Proteção das Mãos · 17 EPIs Certificados CA/MTE</p>' +
+        '<p style="margin-top:8px">Tecnologia DuPont™ Kevlar® e Nomex® · Fornecedora Vale S.A.</p>' +
+        '<p style="margin-top:18px;font-size:11px">Loja Parauapebas · Rua 24 de Março, 1206 · Bairro da Paz</p>' +
+        '<p style="font-size:11px">WhatsApp: +55 94 9128-6367 · andreicosta8.github.io/catalogo-uniluvas</p>' +
+      '</div>' +
+    '</div>';
+    // Helper pra extrair listas
+    function extractList(html, selector){
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html || '';
+      return Array.from(tmp.querySelectorAll(selector)).map(e => e.textContent.trim());
+    }
+    // Uma página por produto, na ordem definida no PRODS
+    Object.keys(PRODS).forEach(pid => {
+      const p = PRODS[pid];
+      const prots = extractList(p.protsHtml, '.mprot');
+      const norms = extractList(p.normsHtml, '.mnorm');
+      const apps = extractList(p.appsHtml, '.mapp');
+      const val = extractList(p.valHtml, '.mval-item');
+      const nao = extractList(p.naoHtml, '.mnao-item');
+      const page = '<div class="pdf-completo-page">' +
+        (p.imgHtml ? '<div class="pp-img-wrap">'+p.imgHtml.replace(/<img/, '<img class="pp-img"')+'</div>' : '') +
+        '<div class="pp-ca">'+(p.ca || 'CA Aprovado')+'</div>' +
+        '<h2>'+p.nome+'</h2>' +
+        '<div class="pp-cat">'+(p.cat || '')+'</div>' +
+        '<div class="pp-desc">'+(p.desc || '')+'</div>' +
+        '<div class="pp-section"><div class="label">Material</div><div class="value">'+(p.material || '—')+'</div></div>' +
+        '<div class="pp-section"><div class="label">Tamanhos</div><div class="value">'+(p.tamanhos || '—')+'</div></div>' +
+        (prots.length ? '<div class="pp-section"><div class="label">Proteções</div><div class="value">'+prots.join(' · ')+'</div></div>' : '') +
+        (norms.length ? '<div class="pp-section"><div class="label">Normas</div><div class="value">'+norms.join(' · ')+'</div></div>' : '') +
+        (apps.length ? '<div class="pp-section"><div class="label">Aplicações</div><div class="value">'+apps.join(' · ')+'</div></div>' : '') +
+        (val.length ? '<div class="pp-section"><div class="label">Usar quando</div><div class="value">'+val.join(' · ')+'</div></div>' : '') +
+        (nao.length ? '<div class="pp-section"><div class="label">NÃO usar</div><div class="value">'+nao.join(' · ')+'</div></div>' : '') +
+      '</div>';
+      wrap.insertAdjacentHTML('beforeend', page);
+    });
+    document.body.appendChild(wrap);
+  }
+  // Define título temporário (= nome do arquivo PDF)
+  const origTitle = document.title;
+  document.title = 'Catalogo Uniluvas 2026 - Completo';
+  // Ativa modo "só imprime essa wrap"
+  document.body.classList.add('pdf-completo-mode');
+  setTimeout(function(){
+    window.print();
+    // Restaura ao fim da impressão
+    setTimeout(function(){
+      document.body.classList.remove('pdf-completo-mode');
+      document.title = origTitle;
+    }, 500);
+  }, 200);
+}
+
+// Inicialização das features novas após DOM pronto
+document.addEventListener('DOMContentLoaded', function(){
+  injectCompareButtons();
+});
+
 </script>
 
 <!-- Botão flutuante "Voltar ao topo" (item 8) -->
@@ -2426,6 +3315,28 @@ document.querySelectorAll('.prod-card[data-cat]').forEach(card => {
     <polyline points="18 15 12 9 6 15"/>
   </svg>
 </button>
+
+<!-- BARRA FLUTUANTE DO COMPARADOR -->
+<div class="compare-bar" id="compare-bar">
+  <div class="compare-count">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <span id="compare-count-text">0 produtos</span>
+  </div>
+  <button class="compare-clear" onclick="clearCompare()">Limpar</button>
+  <button class="compare-go" onclick="openCompareModal()">
+    Comparar
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<!-- MODAL DO COMPARADOR -->
+<div class="compare-modal" id="compare-modal" onclick="closeCompareModal(event)">
+  <div class="compare-modal-box">
+    <button class="compare-modal-close" onclick="closeCompareModal()" aria-label="Fechar">✕</button>
+    <h2 class="compare-modal-title">Comparativo de EPIs</h2>
+    <div class="compare-grid" id="compare-grid"></div>
+  </div>
+</div>
 
 </body>
 </html>
