@@ -3628,7 +3628,7 @@ function renderGuideStep(key){
   html += '<div class="guide-question">'+node.q+'</div><div class="guide-options">';
   node.opts.forEach(opt => {
     if(opt.result){
-      const r = JSON.stringify(opt.result);
+      const r = JSON.stringify(opt.result).replace(/"/g, '&quot;');
       html += '<button class="guide-option" onclick="showGuideResult('+r+')">'+
         '<span class="guide-option-icon">'+opt.icon+'</span>'+opt.label+'</button>';
     } else {
