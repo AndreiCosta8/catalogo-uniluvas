@@ -1527,6 +1527,215 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   GUIA "QUAL EPI PRECISO?" — trigger + modal
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Botão trigger abaixo da busca */
+.guide-trigger-wrap{
+  max-width:1100px;margin:0 auto 16px;padding:0 24px;
+}
+.guide-trigger-btn{
+  width:100%;
+  display:flex;align-items:center;gap:16px;
+  background:linear-gradient(135deg,#0f1e35,#1e3a5f);
+  border:none;border-radius:14px;
+  padding:16px 20px;
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:all .2s;
+  box-shadow:0 4px 14px rgba(15,30,53,.15);
+  text-align:left;
+}
+.guide-trigger-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(15,30,53,.25);
+  background:linear-gradient(135deg,#1a2f4a,#243f6b);
+}
+.guide-trigger-emoji{font-size:28px;flex-shrink:0}
+.guide-trigger-text{flex:1}
+.guide-trigger-text strong{
+  display:block;
+  color:#fff;
+  font-size:15px;font-weight:700;
+  margin-bottom:3px;
+}
+.guide-trigger-text small{
+  color:rgba(255,255,255,.65);
+  font-size:12px;
+}
+.guide-trigger-arrow{
+  color:var(--gold);flex-shrink:0;
+  transition:transform .2s;
+}
+.guide-trigger-btn:hover .guide-trigger-arrow{transform:translateX(4px)}
+@media(max-width:760px){
+  .guide-trigger-wrap{padding:0 16px}
+  .guide-trigger-btn{padding:14px 16px;gap:12px}
+  .guide-trigger-emoji{font-size:22px}
+  .guide-trigger-text strong{font-size:14px}
+}
+
+/* Modal */
+.guide-modal{
+  position:fixed;inset:0;
+  background:rgba(15,30,53,.88);
+  backdrop-filter:blur(10px);
+  z-index:300;
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+}
+.guide-modal.open{display:flex}
+.guide-modal-box{
+  background:#fff;
+  border-radius:22px;
+  width:100%;max-width:640px;
+  max-height:90vh;
+  overflow-y:auto;
+  box-shadow:0 32px 80px rgba(0,0,0,.5);
+}
+/* Header */
+.guide-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 24px 16px;
+  border-bottom:1px solid var(--border);
+}
+.guide-header-left{display:flex;align-items:center;gap:14px}
+.guide-header-icon{font-size:28px}
+.guide-header-title{
+  font-weight:800;font-size:17px;color:var(--navy);
+}
+.guide-header-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.guide-close{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--off);border:none;
+  font-size:16px;color:var(--navy);
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;flex-shrink:0;
+}
+.guide-close:hover{background:#e2e8f0;transform:rotate(90deg)}
+
+/* Progress bar */
+.guide-progress{
+  height:4px;background:var(--off);margin:0;
+}
+.guide-progress-fill{
+  height:100%;background:var(--gold);
+  transition:width .4s ease;border-radius:0 4px 4px 0;
+}
+
+/* Body / conteúdo */
+.guide-body{padding:24px}
+.guide-question{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;color:var(--navy);
+  line-height:1.35;margin-bottom:20px;
+}
+/* Cards de opção */
+.guide-options{display:flex;flex-direction:column;gap:10px}
+.guide-option{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 18px;
+  border:1.5px solid var(--border);
+  border-radius:12px;background:#fff;
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;font-weight:500;color:var(--navy);
+  text-align:left;
+  transition:all .15s;
+  width:100%;
+}
+.guide-option:hover{
+  border-color:var(--gold);
+  background:#fffbf0;
+  transform:translateX(4px);
+}
+.guide-option-icon{
+  font-size:22px;flex-shrink:0;
+  width:36px;text-align:center;
+}
+
+/* Botão "Voltar" */
+.guide-back{
+  display:flex;align-items:center;gap:6px;
+  background:none;border:none;
+  color:var(--muted);font-size:13px;
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  margin-bottom:18px;padding:0;
+  transition:color .15s;
+}
+.guide-back:hover{color:var(--navy)}
+
+/* Tela de resultado */
+.guide-result-title{
+  font-size:13px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--muted);
+  margin-bottom:14px;
+}
+.guide-result-cards{display:flex;flex-direction:column;gap:12px}
+.guide-result-card{
+  display:flex;align-items:center;gap:16px;
+  padding:16px;
+  border:1.5px solid var(--border);
+  border-radius:14px;background:#fff;
+  transition:box-shadow .15s;
+}
+.guide-result-card:hover{
+  box-shadow:0 4px 16px rgba(0,0,0,.08);
+  border-color:var(--gold);
+}
+.guide-result-img{
+  width:80px;height:70px;object-fit:contain;flex-shrink:0;
+  border-radius:8px;background:var(--off);padding:6px;
+}
+.guide-result-info{flex:1;min-width:0}
+.guide-result-ca{
+  font-size:11px;font-weight:700;color:var(--gold);
+  margin-bottom:2px;
+}
+.guide-result-name{
+  font-weight:800;font-size:15px;color:var(--navy);
+  margin-bottom:4px;
+}
+.guide-result-cat{
+  font-size:12px;color:var(--muted);
+}
+.guide-result-actions{
+  display:flex;flex-direction:column;gap:8px;
+  flex-shrink:0;
+}
+.guide-btn-ver{
+  background:var(--navy);color:#fff;
+  border:none;border-radius:8px;
+  padding:9px 14px;font-size:12px;font-weight:700;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  transition:all .15s;white-space:nowrap;
+}
+.guide-btn-ver:hover{background:#1e3a5f}
+
+/* Botão recomeçar */
+.guide-restart{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:20px;padding:12px;
+  background:var(--off);border:none;border-radius:10px;
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;
+  color:var(--muted);cursor:pointer;
+  width:100%;transition:all .15s;
+}
+.guide-restart:hover{background:#e2e8f0;color:var(--navy)}
+
+@media(max-width:620px){
+  .guide-modal-box{border-radius:18px}
+  .guide-header{padding:18px 18px 14px}
+  .guide-body{padding:18px}
+  .guide-question{font-size:17px}
+  .guide-result-card{flex-wrap:wrap}
+  .guide-result-actions{flex-direction:row;width:100%}
+  .guide-btn-ver{flex:1;text-align:center}
+}
+
 </style>
 
 <!-- ════════════════════════════════════════════════════════════════ -->
@@ -1758,6 +1967,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
+</div>
+
+<!-- GUIA DE SELEÇÃO DE EPI -->
+<div class="guide-trigger-wrap">
+  <button class="guide-trigger-btn" onclick="openGuide()">
+    <span class="guide-trigger-emoji">🤔</span>
+    <div class="guide-trigger-text">
+      <strong>Não sei qual EPI preciso</strong>
+      <small>Responda 2 perguntas e encontre o produto ideal</small>
+    </div>
+    <svg class="guide-trigger-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
 </div>
 
 <!-- FILTER -->
@@ -3307,6 +3530,155 @@ document.addEventListener('DOMContentLoaded', function(){
   injectCompareButtons();
 });
 
+// ═══════════════════════════════════════════════════════════════
+// GUIA "QUAL EPI PRECISO?" — árvore de decisão com todos os 17 produtos
+// ═══════════════════════════════════════════════════════════════
+const GUIDE_TREE = {
+  start: {
+    step:1, total:2,
+    q:'Qual é o tipo de trabalho ou risco que você enfrenta?',
+    opts:[
+      {icon:'🔥',label:'Soldagem, calor intenso ou metal líquido',         next:'solda'},
+      {icon:'⚡',label:'Eletricidade ou risco de arco elétrico',            next:'eletrico'},
+      {icon:'✂️',label:'Corte, ferramentas cortantes ou perfuro-cortante',  next:'corte'},
+      {icon:'🛡️',label:'Impacto, abrasão ou trabalho mecânico pesado',      next:'mecanico'},
+      {icon:'🧪',label:'Químicos, óleos ou solventes',                      next:'quimica'}
+    ]
+  },
+  solda:{
+    step:2,total:2,
+    q:'Qual é o tipo de atividade térmica?',
+    opts:[
+      {icon:'🔧',label:'Soldagem padrão — MIG / MAG / TIG',                          result:['maxsolder']},
+      {icon:'🌡️',label:'Fundição, fornos ou metal líquido acima de 400°C',           result:['extremesolder']},
+      {icon:'👕',label:'Soldagem + proteger tronco e braços',                         result:['blusaomaxsolder','maxsolder']},
+      {icon:'👖',label:'Soldagem + proteger pernas',                                  result:['calcamaxsolder','maxsolder']},
+      {icon:'⚡',label:'Risco de arco elétrico em ambiente de soldagem',              result:['arctatil','cleanblack']}
+    ]
+  },
+  eletrico:{
+    step:2,total:2,
+    q:'Qual o nível de risco de arco elétrico?',
+    opts:[
+      {icon:'🟡',label:'Proteção leve + anti-corte (ATPV 8,3 cal/cm² — Nível 2)',   result:['cleanblack']},
+      {icon:'🟠',label:'Subestações e CCM (ATPV 25 cal/cm² — Nível 3)',              result:['arctatil']},
+      {icon:'🔴',label:'Alta energia — máxima proteção (ATPV 45 cal/cm² — Nível 4)',result:['arctatilcobertura']}
+    ]
+  },
+  corte:{
+    step:2,total:2,
+    q:'Qual é o tipo de atividade com risco de corte?',
+    opts:[
+      {icon:'🔪',label:'Corte leve, facas ou atividade que exige destreza',          result:['gripdefender']},
+      {icon:'⚙️',label:'Corte pesado, ferramentas cortantes industriais',            result:['maxdefender']},
+      {icon:'🌡️',label:'Corte + calor até 250°C (serras, máquinas de corte)',        result:['mastercutflex']},
+      {icon:'⛏️',label:'Mineração — corte extremo + impacto severo (ANSI A9)',       result:['totalpower']},
+      {icon:'🛡️',label:'Anti-corte moderado + proteção de impacto (ANSI A6)',        result:['lightpower']},
+      {icon:'👕',label:'Proteção corporal do tronco e braços contra corte',          result:['blusaomaxdefender','maxdefender']},
+      {icon:'💪',label:'Proteção de braços avulsa — mangote',                        result:['mangote']},
+      {icon:'👖',label:'Proteção corporal das pernas e quadril',                     result:['calcamaxdefender']},
+      {icon:'🦺',label:'Proteção integrada — pernas + peitoral',                     result:['calcapeitoral']}
+    ]
+  },
+  mecanico:{
+    step:2,total:2,
+    q:'Qual o nível de proteção mecânica necessário?',
+    opts:[
+      {icon:'💪',label:'Máxima proteção + impacto severo (ANSI A9 — Nível 3)',  result:['totalpower']},
+      {icon:'🖐️',label:'Proteção média + boa destreza (ANSI A6 — Nível 2)',     result:['lightpower']},
+      {icon:'🤝',label:'Aderência + resistência a óleos e abrasão geral',       result:['maxgrip']}
+    ]
+  },
+  quimica:{
+    step:2,total:2,
+    q:'Qual o tipo de substância química?',
+    opts:[
+      {icon:'🧪',label:'Óleos, graxas e solventes (EN 374 — substâncias AIJKLP)',   result:['maxgrip']},
+      {icon:'🌡️',label:'Químicos + calor moderado simultâneo (até 250°C)',          result:['maxgrip','mastercutflex']}
+    ]
+  }
+};
+
+let _guideHistory = [];
+
+function openGuide(){
+  _guideHistory = [];
+  renderGuideStep('start');
+  document.getElementById('guide-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeGuide(){
+  document.getElementById('guide-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleGuideBackdrop(e){
+  if(e.target.id === 'guide-modal') closeGuide();
+}
+function renderGuideStep(key){
+  const node = GUIDE_TREE[key];
+  if(!node) return;
+  document.getElementById('guide-step-label').textContent = 'Passo '+node.step+' de '+node.total;
+  document.getElementById('guide-progress-fill').style.width = ((node.step-1)/node.total*100)+'%';
+  let html = '';
+  if(_guideHistory.length > 0){
+    html += '<button class="guide-back" onclick="guideBack()">'+
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>'+
+      'Voltar</button>';
+  }
+  html += '<div class="guide-question">'+node.q+'</div><div class="guide-options">';
+  node.opts.forEach(opt => {
+    if(opt.result){
+      const r = JSON.stringify(opt.result);
+      html += '<button class="guide-option" onclick="showGuideResult('+r+')">'+
+        '<span class="guide-option-icon">'+opt.icon+'</span>'+opt.label+'</button>';
+    } else {
+      html += '<button class="guide-option" onclick="guideGo(\''+opt.next+'\',\''+key+'\')">'+
+        '<span class="guide-option-icon">'+opt.icon+'</span>'+opt.label+'</button>';
+    }
+  });
+  html += '</div>';
+  document.getElementById('guide-body').innerHTML = html;
+}
+function guideGo(nextKey, currentKey){
+  _guideHistory.push(currentKey);
+  renderGuideStep(nextKey);
+}
+function guideBack(){
+  const prev = _guideHistory.pop();
+  if(prev) renderGuideStep(prev);
+}
+function showGuideResult(prodIds){
+  document.getElementById('guide-progress-fill').style.width = '100%';
+  document.getElementById('guide-step-label').textContent = 'Resultado';
+  let html = '<div class="guide-result-title">Recomendamos para você:</div><div class="guide-result-cards">';
+  prodIds.forEach(pid => {
+    const p = PRODS[pid]; if(!p) return;
+    const tmp = document.createElement('div');
+    tmp.innerHTML = p.imgHtml || '';
+    const img = tmp.querySelector('img');
+    const imgSrc = img ? img.src : '';
+    html += '<div class="guide-result-card">'+
+      (imgSrc ? '<img class="guide-result-img" src="'+imgSrc+'" alt="'+p.nome+'" loading="lazy">' : '')+
+      '<div class="guide-result-info">'+
+        '<div class="guide-result-ca">'+(p.ca||'CA Aprovado')+'</div>'+
+        '<div class="guide-result-name">'+p.nome+'</div>'+
+        '<div class="guide-result-cat">'+(p.cat||'')+'</div>'+
+      '</div>'+
+      '<div class="guide-result-actions">'+
+        '<button class="guide-btn-ver" onclick="closeGuide();openModal(\''+pid+'\')">Ver Ficha</button>'+
+      '</div>'+
+    '</div>';
+  });
+  html += '</div><button class="guide-restart" onclick="openGuide()">'+
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>'+
+    'Recomeçar o guia</button>';
+  document.getElementById('guide-body').innerHTML = html;
+}
+// ESC fecha
+document.addEventListener('keydown', e => {
+  if(e.key==='Escape' && document.getElementById('guide-modal').classList.contains('open')) closeGuide();
+});
+
 </script>
 
 <!-- Botão flutuante "Voltar ao topo" (item 8) -->
@@ -3335,6 +3707,27 @@ document.addEventListener('DOMContentLoaded', function(){
     <button class="compare-modal-close" onclick="closeCompareModal()" aria-label="Fechar">✕</button>
     <h2 class="compare-modal-title">Comparativo de EPIs</h2>
     <div class="compare-grid" id="compare-grid"></div>
+  </div>
+</div>
+
+<!-- MODAL DO GUIA "QUAL EPI PRECISO?" -->
+<div class="guide-modal" id="guide-modal" onclick="handleGuideBackdrop(event)">
+  <div class="guide-modal-box">
+    <!-- Header -->
+    <div class="guide-header">
+      <div class="guide-header-left">
+        <span class="guide-header-icon">🧤</span>
+        <div>
+          <div class="guide-header-title">Qual EPI eu preciso?</div>
+          <div class="guide-header-sub" id="guide-step-label">Passo 1 de 2</div>
+        </div>
+      </div>
+      <button class="guide-close" onclick="closeGuide()" aria-label="Fechar">✕</button>
+    </div>
+    <!-- Progress bar -->
+    <div class="guide-progress"><div class="guide-progress-fill" id="guide-progress-fill"></div></div>
+    <!-- Conteúdo dinâmico -->
+    <div class="guide-body" id="guide-body"></div>
   </div>
 </div>
 
